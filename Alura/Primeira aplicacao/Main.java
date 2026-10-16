@@ -1,33 +1,34 @@
+/* Exercises from DIO x Itau Bootcamp (Fundaments of the Java programming language)
+
+Ex1: Write a code that receives the name and year of birth of someone and print "Hello someone you are X years old".
+
+Ex2:Write a code that receives the measure of a squares side and print the area of that square.
+
+Ex3: Write a code that receives the height and base of a rectangle and print its area.
+
+Ex4: Write a code that receives name, age of 2 people and print the age difference between them
+
+*/
+
+import java.util.Scanner;
+
+// Exercise 1: Write a code that receives the name and year of birth of someone and print "Hello someone you are X years old".
 public class Main {
 
+
     public static void main(String[] args) {
-        var value1 = 12;
-        var binary1 = Integer.toBinaryString(value1);
-        System.out.printf("First number of the operation %s (Binary Representation: %s)\n",value1, binary1);
-        var value2 = 2;
-        var binary2 = Integer.toBinaryString(value2);
-        System.out.printf("Second number of the operation %s (Binary Representation: %s)\n",value2, binary2);
-        var result = value1 >> value2;
-        var binaryResult = Integer.toBinaryString(result);
-        System.out.printf(" %s ^ %s = %s (Binary Representation: %s)\n", value1, value2, result, binaryResult);
+        Scanner scanner = new Scanner(System.in);
+        // Getting users name
+        System.out.println("What is your name?");
+        var name = scanner.nextLine();
+        // Getting users year
+        System.out.println("When were you born?");
+        var year = scanner.nextInt();
+        // Getting users age
+        var age = 2026 - year;
+        // Main message
+        System.out.printf("Hello %s, you are %d years old%n", name, age);
 
+        scanner.close();
     }
-    /*
-    
-    0 = false
-    1 = true
-
-
-    << pushes the amount of times you set it too to the right, but verifies if the number is negative. if negative place 1's where there is space else place 0's
-    
-
-    >> pushes the amount of times you set it too to the left and place 0's where he made space
-
-
-    >>> works as a leftshifter(>>)
-
-
-    <<< Works as a Rightshifter(<<) but always place 0's
-    */
-
 }
