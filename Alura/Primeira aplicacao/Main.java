@@ -9,22 +9,33 @@ Ex3: Write a code that receives the height and base of a rectangle and print its
 Ex4: Write a code that receives name, age of 2 people and print the age difference between them
 
 */
-// Exercise 3: Write a code that receives the height and base of a rectangle and print its area.
+// Exercise 4: Write a code that receives names and age of 2 people and print the age difference between them
 
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("What is the Base of this rectangle? ");
-        var rectangleBase = scanner.nextInt();
-        System.out.println("What is the height of this rectangle? ");
-        var rectangleHeight = scanner.nextInt();
+        // Person1's name and age
+        System.out.println("What is your name? ");
+        var name1 = scanner.nextLine();
+        System.out.println("What is your age? ");
+        var age1 = scanner.nextInt();
+        scanner.nextLine(); // ← consume leftover newline
 
-        var rectangleArea = (rectangleBase * rectangleHeight);
-        System.out.printf("The area of this rectangle is: %s \n", rectangleArea);
+        // Person2's name and age
+        System.out.println("What is your friend's name? ");
+        var name2 = scanner.nextLine();
+        System.out.println("What is your friend's age? ");
+        var age2 = scanner.nextInt();
+        scanner.nextLine(); // ← consume leftover newline
+
+        // Age difference between them
+        int difference = Math.abs(age1 - age2);
+        System.out.printf("%s and %s have an age difference of %d year(s)%n", name1, name2, difference);
+
+        scanner.close();
     }
-}
+}   
