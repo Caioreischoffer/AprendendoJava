@@ -9,23 +9,22 @@ Ex3: Write a code that receives the height and base of a rectangle and print its
 Ex4: Write a code that receives name, age of 2 people and print the age difference between them
 
 */
-// Exercise 2: Write a code that receives the measure of a squares side and print the area of that square.
+// Exercise 3: Write a code that receives the height and base of a rectangle and print its area.
 
 import java.util.Scanner;
 
 public class Main {
 
-public static void main(String[] args) {
+    public static void main(String[] args) {
+        
+        Scanner scanner = new Scanner(System.in);
 
-    Scanner scanner = new Scanner(System.in);
-    // Getting the measures
-    System.out.println("Give me a measure of the square's side: ");
-    var squareSide = scanner.nextInt();
-    // Getting the square area
-    var squareArea = squareSide * 4;
-    // Last message
-    System.out.printf("The area of the square is: %s \n", squareArea);
+        System.out.println("What is the Base of this rectangle? ");
+        var rectangleBase = scanner.nextInt();
+        System.out.println("What is the height of this rectangle? ");
+        var rectangleHeight = scanner.nextInt();
 
+        var rectangleArea = (rectangleBase * rectangleHeight);
+        System.out.printf("The area of this rectangle is: %s \n", rectangleArea);
     }
-
 }
