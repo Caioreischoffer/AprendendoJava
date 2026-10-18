@@ -1,0 +1,36 @@
+# Compiled output
+out/
+bin/
+*.class
+
+# Build tools (in case Maven/Gradle are adopted later)
+target/
+build/
+.gradle/
+
+# Packaged artifacts
+*.jar
+*.war
+
+# JVM crash logs
+hs_err_pid*
+
+# IntelliJ IDEA (personal/machine-specific; shared bits like .idea/codeStyles are kept)
+*.iml
+.idea/workspace.xml
+.idea/shelf/
+.idea/httpRequests/
+.idea/dataSources/
+
+# VS Code (keep shared settings.json only)
+.vscode/*
+!.vscode/settings.json
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs and temp files
+*.log
+*.tmp
