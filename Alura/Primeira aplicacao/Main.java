@@ -23,32 +23,30 @@ informed number divided by the first number has rest different from 0
 , numbers less than the first number should be ignored.*/
 
 import java.util.Scanner;
-/*Ex8: Write a code where the user enters a prime number, a second number
-heigher than the first number and choose between even or odd, with that
-the code should show all the numbers evens or odds( according with the
-inicial choice) in the interval of the chosen numbers, include the
-numbers informed but in decreasing order.*/
-
+/* Ex9: Write a code where the user writes an inicial number, after he
+will inform X numbers, the execution will continue untill the
+informed number divided by the first number has rest different from 0
+, numbers less than the first number should be ignored. */
 public class Main {
     public static void main(String[] args) {
         var scanner = new Scanner(System.in);
-        // Getting informations
-        System.out.println("Enter a prime number: ");
-        var primeNumber = scanner.nextInt();
 
-        System.out.println("Enter a number higher than the first one: ");
-        var number = scanner.nextInt();
+        System.out.println("Enter the first number: ");
+        var firstNumber = scanner.nextInt();
 
-        System.out.println("Choose even or odd: ");
-        var answer = scanner.next();
+        var keepGoing = true;
 
-        System.out.println("The numbers between your chosen numbers are: ");
+        while (keepGoing) {
+            System.out.println("Enter another number: ");
+            var number = scanner.nextInt();
 
-        for (int i = number; i >= primeNumber; i--) {
-            if (answer.equalsIgnoreCase("even") && i % 2 == 0) {
-                System.out.println(i);
-            } else if (answer.equalsIgnoreCase("odd") && i % 2 != 0) {
-                System.out.println(i);
+            if (number < firstNumber) {
+                System.out.println("Ignored: smaller than the first number.");
+            } else if (number % firstNumber != 0) {
+                System.out.println("Remainder is not 0. Stopping.");
+                keepGoing = false;
+            } else {
+                System.out.println(number + " is divisible by " + firstNumber + ". Continue!");
             }
         }
     }
